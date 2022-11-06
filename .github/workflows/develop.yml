@@ -1,0 +1,42 @@
+name: Test Code
+on:
+  pull_request:
+  push:
+    branches:
+      - develop/*
+jobs:
+  dev-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Install Dependencies
+        run: npm install
+      - name: Test Lint
+        run: npm run lint
+      - name: Test coverage
+        run: npm run test
+
+  QA:
+    needs: dev-code
+    enviroment:
+      name: QA
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Install Dependencies
+        run: npm install
+      - name: Test coverage
+        run: npm run test
+      - name: Homepage
+        run: npm run Homepage
+      - name: build
+        run: CI=false npm run build
+      - name: netlify
+        run: netlify deploy --prod --auth ${{secrets.NETLIFY_TOKEN}} --site ${{secrets.SITE_ID}}
+        

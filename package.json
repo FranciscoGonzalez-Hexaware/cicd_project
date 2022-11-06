@@ -2,7 +2,7 @@
   "name": "cicd_project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Shinkut.github.io/cicd_project/",
+  "homepage": "https://FranciscoGonzalez-Hexaware.github.io/cicd_project/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -11,6 +11,7 @@
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
+    "netlify-cli": "^12.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -23,7 +24,8 @@
     "test": "react-scripts test --coverage --watchAll=false",
     "lint": "eslint --cache . --ext ts,tsx",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "homepage": "node scripts/update_homepage.js"
   },
   "eslintConfig": {
     "extends": [
