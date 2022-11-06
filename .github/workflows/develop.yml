@@ -39,4 +39,3 @@ jobs:
         run: CI=false npm run build
       - name: netlify
         run: netlify deploy --prod --auth ${{secrets.NETLIFY_TOKEN}} --site ${{secrets.SITE_ID}}
-        

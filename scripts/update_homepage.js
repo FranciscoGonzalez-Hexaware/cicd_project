@@ -12,4 +12,4 @@ if(json.hasOwnProperty("homepage")){
  json.homepage = "https://rococo-sunflower-9e123e.netlify.app/"
 }
 
-save(pkgJson, JSON.stringify(json, null, 1));
+save(pkgJson, JSON.stringify(json, null, 2));
