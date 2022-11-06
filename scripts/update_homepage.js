@@ -11,5 +11,5 @@ const json = require(pkgJson);
 if(json.hasOwnProperty("homepage")){
  json.homepage = "https://rococo-sunflower-9e123e.netlify.app/"
 }
-
+console.log("test");
 save(pkgJson, JSON.stringify(json, null, 2));
